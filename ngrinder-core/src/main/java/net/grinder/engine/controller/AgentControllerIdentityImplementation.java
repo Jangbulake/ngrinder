@@ -1,4 +1,4 @@
-/* 
+/*
  * Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -9,7 +9,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License. 
+ * limitations under the License.
  */
 package net.grinder.engine.controller;
 
@@ -17,7 +17,7 @@ import net.grinder.common.processidentity.AgentIdentity;
 
 /**
  * Agent Controller identity.
- * 
+ *
  * @author JunHo Yoon
  * @since 3.0
  */
@@ -32,9 +32,11 @@ public class AgentControllerIdentityImplementation extends AbstractAgentControll
 
 	private String region;
 
+	private boolean external;
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param name	The public name of the agent.
 	 * @param ip	The ip of agent controller
 	 */
@@ -45,7 +47,7 @@ public class AgentControllerIdentityImplementation extends AbstractAgentControll
 
 	/**
 	 * Return the console allocated agent number.
-	 * 
+	 *
 	 * @return The number.
 	 */
 	public int getNumber() {
@@ -54,7 +56,7 @@ public class AgentControllerIdentityImplementation extends AbstractAgentControll
 
 	/**
 	 * Set the console allocated agent number.
-	 * 
+	 *
 	 * @param number	The number.
 	 */
 	public void setNumber(int number) {
@@ -63,7 +65,7 @@ public class AgentControllerIdentityImplementation extends AbstractAgentControll
 
 	/**
 	 * Get ip.
-	 * 
+	 *
 	 * @return ip
 	 */
 	public String getIp() {
@@ -78,4 +80,11 @@ public class AgentControllerIdentityImplementation extends AbstractAgentControll
 		this.region = region;
 	}
 
+	public boolean isExternal() {
+		return this.external;
+	}
+
+	public void setExternal(boolean external) {
+		this.external = external;
+	}
 }

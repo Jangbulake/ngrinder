@@ -112,6 +112,7 @@ public class AgentService extends AbstractAgentService implements TopicListener<
 		agentInfo.setName(agentIdentity.getName());
 		agentInfo.setVersion(agentManager.getAgentVersion(agentIdentity));
 		agentInfo.setPort(agentManager.getAttachedAgentConnectingPort(agentIdentity));
+		agentInfo.setExternal(agentIdentity.isExternal());
 	}
 
 	private String resolveRegion(String attachedAgentRegion) {

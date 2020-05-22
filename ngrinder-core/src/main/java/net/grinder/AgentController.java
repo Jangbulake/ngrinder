@@ -101,6 +101,7 @@ public class AgentController implements Agent, AgentConstants {
 		// Set it with the default name
 		this.m_agentIdentity = new AgentControllerIdentityImplementation(agentConfig.getAgentHostID(), NetworkUtils.DEFAULT_LOCAL_HOST_ADDRESS);
 		this.m_agentIdentity.setRegion(agentConfig.getRegion());
+		this.m_agentIdentity.setExternal(agentConfig.isExternalMode());
 		this.agentSystemDataCollector = new SystemDataCollector();
 		this.agentSystemDataCollector.setAgentHome(agentConfig.getHome().getDirectory());
 		this.agentSystemDataCollector.refresh();

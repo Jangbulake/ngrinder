@@ -75,11 +75,16 @@ public class AgentInfo extends BaseEntity<AgentInfo> {
 	@Transient
 	private String version;
 
+	@Type(type = "true_false")
+	@Column(columnDefinition = "char(1) default 'F'")
+	private Boolean external;
+
 	@PrePersist
 	public void init() {
 		this.approved = getSafe(this.approved, false);
 		this.version = getSafe(this.version, "");
 		this.region = getSafe(this.region, "");
+		this.external = getSafe(this.external, false);
 	}
 
 	@Override
